@@ -4,7 +4,7 @@ from flask_socketio import SocketIO
 import cv2
 import math
 import time
-import asyncio
+
 import threading
 import base64
 
@@ -93,17 +93,17 @@ app=Flask(__name__)
 # socketio = SocketIO(app)
 socketio = SocketIO(app, cors_allowed_origins="*")
 
-@app.route("/api/start",methods=['GET'])
-def detect_start():
-    return jsonify({
-        'message': "Start"
-    })
+# @app.route("/api/start",methods=['GET'])
+# def detect_start():
+#     return jsonify({
+#         'message': "Start"
+#     })
 
-@app.route("/api/stop",methods=['GET'])
-def detect_stop():
-    return jsonify({
-        'message': "Stop"
-    })
+# @app.route("/api/stop",methods=['GET'])
+# def detect_stop():
+#     return jsonify({
+#         'message': "Stop"
+#     })
 
 @socketio.on("connect")
 def connect(*args, **kwargs):

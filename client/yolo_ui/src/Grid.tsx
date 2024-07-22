@@ -20,7 +20,7 @@ const createBasicGrid = () => {
   return (
     <Grid container spacing={5} justifyContent="center" alignItems="center">
       <Grid item xs={6}>
-        <WebsocketDisplay/>
+        {/* <WebsocketDisplay/> */}
       </Grid>
       <Grid item xs={6}>
       <Item>Right Grid</Item>
