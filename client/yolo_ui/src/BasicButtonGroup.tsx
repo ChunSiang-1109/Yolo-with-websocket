@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import App from './App';
+
 
 export default function BasicButtonGroup(
   { buttonStatus1, setButtonStatus1, buttonCapOne, setButtonCapOne }:
@@ -50,7 +50,7 @@ export default function BasicButtonGroup(
     <ButtonGroup variant="contained" aria-label="Basic button group">
       <Button onClick={handleStart} disabled={buttonStatus1}>Start</Button>
       <Button onClick={handleStop} disabled={!buttonStatus1}>Stop</Button>
-      <Button onClick={handleCaptureOneImage} disabled={!buttonStatus1 || !!buttonCapOne}>Capture One Image</Button>
+      <Button onClick={handleCaptureOneImage} disabled={!buttonStatus1}>Capture One Image</Button>
       {/* <Button onClick={handleKeepCapturing}>Keep Capturing</Button> */}
     </ButtonGroup>
   );
@@ -58,24 +58,24 @@ export default function BasicButtonGroup(
 
 
 
-function handleKeepCapturing() {
-  fetch('http://localhost:5000/api/stop')
-    .then(response => {
-      if (response.ok) {
-        return response.json(); // Parse the response data as JSON
-      } else {
-        throw new Error('API request failed');
-      }
-    })
+// function handleKeepCapturing() {
+//   fetch('http://localhost:5000/api/stop')
+//     .then(response => {
+//       if (response.ok) {
+//         return response.json(); // Parse the response data as JSON
+//       } else {
+//         throw new Error('API request failed');
+//       }
+//     })
 
-    .then(data => {
-      // Process the response data here
-      console.log(data);
-    })
+//     .then(data => {
+//       // Process the response data here
+//       console.log(data);
+//     })
 
-    .catch(error => {
-      // Handle any errors here
-      console.error(error);
-    });
-}
+//     .catch(error => {
+//       // Handle any errors here
+//       console.error(error);
+//     });
+// }
 

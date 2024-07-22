@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect, useRef, RefObject } from 'react';
+import {RefObject } from 'react';
 
 export default function WebsocketDisplay({image}: {image: RefObject<HTMLImageElement>}) {
   return (

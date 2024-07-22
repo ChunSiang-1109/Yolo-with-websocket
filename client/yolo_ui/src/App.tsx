@@ -33,6 +33,7 @@ function App() {
   //output capturing one
   const latestCaptureRef = useRef<HTMLCanvasElement>(null);
   const [capturedImage, setCapturedImage] = useState<string | null>(null);
+  //record the video and save it 
 
   useEffect(() => {
     return () => {
@@ -53,7 +54,7 @@ function App() {
 
   useEffect(() => {
     if (capturedImage) {
-      capImage123();
+      capImageOne();
     }
     else {
       disconnectSocket();
@@ -70,7 +71,7 @@ function App() {
     });
 
     newSocket.on('disconnect', () => {
-      console.log("Frontend SocketIO connected!");
+      console.log("Frontend SocketIO disconnected!");
 
     });
 
@@ -82,7 +83,7 @@ function App() {
     setSocketInstance(newSocket);
   };
 
-  const capImage123 = () => {
+  const capImageOne = () => {
     if (videoRef.current && latestCaptureRef.current) {
       const image = videoRef.current;
       const latestCapture = latestCaptureRef.current;

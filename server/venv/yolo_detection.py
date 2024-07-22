@@ -65,11 +65,11 @@ def video_stream():
                 thickness = 2
                 cv2.putText(img, f"{class_name} {confidence:.2f}", org, font, fontScale, color, thickness)
 
-        # Calculate and display FPS
-        frame_count += 1
-        elapsed_time = time.time() - start_time
-        fps = frame_count / elapsed_time
-        cv2.putText(img, f"FPS: {fps:.2f}", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
+        # # Calculate and display FPS
+        # frame_count += 1
+        # elapsed_time = time.time() - start_time
+        # fps = frame_count / elapsed_time
+        # cv2.putText(img, f"FPS: {fps:.2f}", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
         # # Show webcam feed
         # cv2.imshow('Webcam', img)
